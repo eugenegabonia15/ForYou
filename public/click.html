@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="oshie.css" />
+  <title>For Oshie</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1>Happy 2yrs and 9mots my Love</h1>
+      <p>
+        I'm happy that we continue to love each other and bring out the best in each other. 
+        I hope we continue to grow together and achieve our dreams together. 
+        As always and forever I love you and remember that I'm always here to support you and I'm proud of you.
+        Thank you so much for your continued love and care for me, I appreciate the good things you've 
+        done for me and the beautiful things you've given me, especially the bouquet of flowers! 
+        It was a wonderous experience for me to receive such beautiful flowers ♥ 
+        <br><br>- Yours Truly, gf A.S
+      </p>
+      <img src="himnme.jpg" alt="Flowers" class="container-img">
+
+      <!-- YouTube Video Container -->
+      <div class="video-wrapper">
+        <div id="player"></div>
+      </div>
+    </div>
+    <a href="foruhtml.html" class="back-btn">Back</a>
+  </div>
+
+  <!-- Load YouTube API and control playback -->
+  <script>
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '315',
+        width: '560',
+        videoId: 'EPIL1ImD_xU',
+        playerVars: {
+          'autoplay': 1,
+          'mute': 1,
+          'controls': 1,
+          'rel': 0
+        },
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      event.target.playVideo();
+
+      // Try to unmute after 3 seconds
+      setTimeout(() => {
+        player.unMute(); // Will only work if user interacted with the page
+      }, 2000);
+    }
+
+    // Load IFrame Player API
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  </script>
+</body>
+</html>
